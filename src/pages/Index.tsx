@@ -3,6 +3,7 @@ import ComicPanel from "@/components/ComicPanel";
 import SpeechBubble from "@/components/SpeechBubble";
 import SoundEffect from "@/components/SoundEffect";
 import WhamOverlay from "@/components/WhamOverlay";
+import coverImage from "@/assets/mr-wiggles-kumar-cover.png";
 
 const Index = () => {
   const [showWham, setShowWham] = useState(false);
@@ -52,9 +53,18 @@ const Index = () => {
         </h1>
 
         {/* Speech bubble subtitle */}
-        <SpeechBubble className="mt-6 mb-10">
+        <SpeechBubble className="mt-6 mb-6">
           A ridiculously chaotic adventure
         </SpeechBubble>
+
+        {/* Cover Image */}
+        <div className="relative z-30 my-6">
+          <img
+            src={coverImage}
+            alt="Mr. Wiggles Kumar Comic Cover"
+            className="w-64 md:w-80 lg:w-96 border-[4px] border-comic-black shadow-[8px_8px_0_hsl(var(--comic-black))] hover:scale-105 transition-transform duration-300"
+          />
+        </div>
 
         {/* CTA Button — Starburst */}
         <button
