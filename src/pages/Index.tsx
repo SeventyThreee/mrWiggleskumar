@@ -3,6 +3,7 @@ import ComicPanel from "@/components/ComicPanel";
 import SpeechBubble from "@/components/SpeechBubble";
 import SoundEffect from "@/components/SoundEffect";
 import WhamOverlay from "@/components/WhamOverlay";
+import coverImage from "@/assets/mr-wiggles-kumar-cover.png";
 
 const Index = () => {
   const [showWham, setShowWham] = useState(false);
