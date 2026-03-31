@@ -87,10 +87,18 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Comic Neue', cursive;
+    cursor: none;
   }
 }
 
 @layer utilities {
+  .cursor-none {
+    cursor: none !important;
+  }
+  
+  .cursor-none * {
+    cursor: none !important;
+  }
   .font-bangers {
     font-family: 'Bangers', cursive;
     letter-spacing: 0.05em;
@@ -98,6 +106,82 @@
   .font-comic {
     font-family: 'Comic Neue', cursive;
   }
+
+  .comic-border-thick {
+    border: 4px solid hsl(0 0% 0%);
+    box-shadow: 6px 6px 0px hsl(0 0% 0%);
+  }
+
+  .paper-texture {
+    background-color: #1D3557;
+    background-image: 
+      url("https://www.transparenttextures.com/patterns/paper-fibers.png"),
+      radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
+    background-size: auto, 20px 20px;
+  }
+
+  /* Halftone Overlay */
+  .halftone-overlay {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 8px 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .comic-border-thick {
+    border: 6px solid #000;
+    box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+    background: #fff;
+  }
+
+  .water-reflection {
+    position: relative;
+  }
+
+  .water-reflection::after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: inherit;
+    transform: scaleY(-1);
+    opacity: 0.2;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), transparent);
+    filter: blur(2px);
+  }
+
+  .ripple-on-hover:hover {
+    background: radial-gradient(circle, rgba(168, 218, 220, 0.4) 0%, transparent 70%);
+    transition: background 0.3s ease;
+  }
+}
+
+@keyframes bubble-rise {
+  0% { transform: translateY(100%) scale(0.5); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+}
+
+@keyframes drip {
+  0% { transform: translateY(-100%); }
+  50% { transform: translateY(0); height: 60px; }
+  100% { transform: translateY(200%); height: 0; opacity: 0; }
+}
+
+.animate-bubble {
+  animation: bubble-rise linear infinite;
+}
+
+.animate-drip {
+  animation: drip ease-in infinite;
 }
 
 /* Paper texture background */

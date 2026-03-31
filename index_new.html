@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Wiggles Kumar — A Ridiculously Chaotic Comic</title>
+    <meta name="description" content="Download Mr. Wiggles Kumar Issue #1 — a ridiculously chaotic comic adventure by Jeevakrishna Vetrivel. Free download!" />
+    <meta name="author" content="Jeevakrishna Vetrivel" />
+    <meta property="og:title" content="Mr. Wiggles Kumar Comic" />
+    <meta property="og:description" content="A ridiculously chaotic adventure. Download Issue #1 for free!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <style>
+        body {
+            background-color: #1D3557;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .hero img {
+            border: 10px solid black;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+            width: 80%;
+            max-width: 600px;
+        }
+        .cta {
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 24px;
+            background-color: #FF6F61;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .cta:hover {
+            transform: scale(1.05);
+        }
+        .cta:before {
+            content: 'READ NOW!';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: white;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .preview {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .preview img {
+            border: 5px solid black;
+            width: 30%;
+            max-width: 200px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mr. Wiggles Kumar</h1>
+    <div class="hero">
+        <img src="comic-poster.png" alt="Comic Poster">
+        <button class="cta">Download Comic</button>
+    </div>
+    <div class="preview">
+        <img src="preview1.png" alt="Preview 1">
+        <img src="preview2.png" alt="Preview 2">
+        <img src="preview3.png" alt="Preview 3">
+    </div>
+    <footer>
+        <p>A comic by Jeevakrishna Vetrivel :)</p>
+        <p>To be continued…</p>
+    </footer>
+</body>
+</html>
