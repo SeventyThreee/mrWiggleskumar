@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        comic: {
+          black: "hsl(var(--comic-black))",
+          red: "hsl(var(--comic-red))",
+          blue: "hsl(var(--comic-blue))",
+          yellow: "hsl(var(--comic-yellow))",
+          panel: "hsl(var(--comic-panel))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -65,25 +72,38 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "comic-float": {
+          "0%, 100%": { transform: "translateY(0) rotate(-3deg)" },
+          "50%": { transform: "translateY(-12px) rotate(3deg)" },
+        },
+        "comic-float-alt": {
+          "0%, 100%": { transform: "translateY(-8px) rotate(2deg)" },
+          "50%": { transform: "translateY(4px) rotate(-4deg)" },
+        },
+        "wham-burst": {
+          "0%": { transform: "scale(0) rotate(-20deg)", opacity: "0" },
+          "60%": { transform: "scale(1.2) rotate(5deg)", opacity: "1" },
+          "100%": { transform: "scale(1) rotate(0deg)", opacity: "1" },
+        },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(-2deg)" },
+          "50%": { transform: "rotate(2deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "comic-float": "comic-float 3s ease-in-out infinite",
+        "comic-float-alt": "comic-float-alt 4s ease-in-out infinite",
+        "wham-burst": "wham-burst 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "wiggle": "wiggle 0.5s ease-in-out infinite",
       },
     },
   },
