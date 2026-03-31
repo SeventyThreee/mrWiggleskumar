@@ -20,11 +20,8 @@ const Index = () => {
   const { scrollY } = useScroll();
   const yParallax = useTransform(scrollY, [0, 500], [0, 100]);
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Mr Wiggles Kumar comic.pdf";
-    link.download = "Mr Wiggles Kumar comic.pdf";
-    link.click();
+  const handleDownloadDrive = () => {
+    window.open("https://drive.google.com/drive/folders/1dYeva3P3XeU3_aNZyKirKDnnp6SUPXYJ?usp=sharing", "_blank");
   };
 
   return (
@@ -36,18 +33,31 @@ const Index = () => {
       <Bubbles />
 
       {/* Comic Stickers on the sides */}
-      <div className="fixed left-2 top-1/2 -translate-y-1/2 flex flex-col gap-12 z-20 pointer-events-none">
-        <ComicSticker src="/s1.png" rotate={-15} delay={0.2} className="scale-75 md:scale-100" />
-        <ComicSticker src="/s3.png" rotate={10} delay={0.4} className="scale-75 md:scale-100" />
-        <ComicSticker src="/s5.png" rotate={-5} delay={0.6} className="scale-75 md:scale-100" />
-        <ComicSticker src="/s7.png" rotate={12} delay={0.8} className="scale-75 md:scale-100" />
+      <div className="fixed left-2 top-1/2 -translate-y-1/2 flex flex-col gap-12 z-20 pointer-events-none hidden md:flex">
+        <ComicSticker src="/s1.png" rotate={-15} delay={0.2} />
+        <ComicSticker src="/s3.png" rotate={10} delay={0.4} />
+        <ComicSticker src="/s5.png" rotate={-5} delay={0.6} />
+        <ComicSticker src="/s7.png" rotate={12} delay={0.8} />
       </div>
 
-      <div className="fixed right-2 top-1/2 -translate-y-1/2 flex flex-col gap-12 z-20 pointer-events-none">
-        <ComicSticker src="/s2.png" rotate={8} delay={0.3} className="scale-75 md:scale-100" />
-        <ComicSticker src="/s4.png" rotate={-12} delay={0.5} className="scale-75 md:scale-100" />
-        <ComicSticker src="/s6.png" rotate={15} delay={0.7} className="scale-75 md:scale-100" />
-        <ComicSticker src="/s8.png" rotate={-10} delay={0.9} className="scale-75 md:scale-100" />
+      <div className="fixed right-2 top-1/2 -translate-y-1/2 flex flex-col gap-12 z-20 pointer-events-none hidden md:flex">
+        <ComicSticker src="/s2.png" rotate={8} delay={0.3} />
+        <ComicSticker src="/s4.png" rotate={-12} delay={0.5} />
+        <ComicSticker src="/s6.png" rotate={15} delay={0.7} />
+        <ComicSticker src="/s8.png" rotate={-10} delay={0.9} />
+      </div>
+
+      {/* Mobile Sticker Board at the bottom */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-[60] px-4 pb-4 pointer-events-none">
+        <div className="relative bg-white/10 backdrop-blur-sm border-t-4 border-black p-4 rounded-t-3xl flex justify-center items-center gap-4 overflow-x-auto no-scrollbar pointer-events-auto">
+          {/* Board Tape */}
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-white/60 border-2 border-black/20 rotate-1 z-10" />
+          
+          <ComicSticker src="/s1.png" rotate={-5} className="scale-75 shrink-0" />
+          <ComicSticker src="/s2.png" rotate={5} className="scale-75 shrink-0" />
+          <ComicSticker src="/s3.png" rotate={-3} className="scale-75 shrink-0" />
+          <ComicSticker src="/s4.png" rotate={4} className="scale-75 shrink-0" />
+        </div>
       </div>
 
       <main className="relative z-10">
@@ -110,11 +120,17 @@ const Index = () => {
 
           {/* CTA Section */}
           <div className="flex flex-col items-center gap-6 mt-8">
-            <RippleButton onClick={handleDownload}>
-              DOWNLOAD COMIC
-            </RippleButton>
-            <p className="font-comic-body text-white/70 text-sm font-bold tracking-widest bg-black/30 px-4 py-1 rounded-full">
-              FREE PDF • 40 MB • ISSUE #1
+            <div className="flex flex-col items-center gap-4">
+              <RippleButton onClick={handleDownloadDrive}>
+                DOWNLOAD COMIC
+              </RippleButton>
+              <p className="font-comic-body text-white/70 text-sm font-bold tracking-widest bg-black/30 px-4 py-1 rounded-full uppercase">
+                HIGH QUALITY
+              </p>
+            </div>
+            
+            <p className="font-bangers text-comic-yellow text-xl tracking-wider drop-shadow-[2px_2px_0_black]">
+              FREE DOWNLOAD • ISSUE #1
             </p>
           </div>
         </section>

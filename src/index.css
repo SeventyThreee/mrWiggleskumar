@@ -99,6 +99,15 @@
   .cursor-none * {
     cursor: none !important;
   }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .font-bangers {
     font-family: 'Bangers', cursive;
     letter-spacing: 0.05em;
